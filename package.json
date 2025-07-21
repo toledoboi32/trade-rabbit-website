@@ -1,21 +1,100 @@
 {
-  "name": "trade-rabbit-website",
-  "version": "1.0.0",
-  "description": "Trade Rabbit - AI-powered platform for home services with integrated demo videos",
+  "name": "traderabbit-website",
+  "version": "2.0.0",
+  "description": "TradeRabbit - AI Assistant That Books Appointments 24/7 for Contractors",
   "main": "index.html",
   "scripts": {
-    "dev": "python3 -m http.server 8080",
+    "dev": "npx serve .",
+    "start": "npx serve . -p 3000",
     "build": "echo 'Static site - no build needed'",
-    "start": "python3 -m http.server 8080"
+    "deploy": "vercel --prod",
+    "preview": "npx serve . -p 8080"
   },
   "keywords": [
-    "ai",
+    "contractor-management",
+    "ai-assistant",
+    "appointment-booking",
+    "hvac-software",
+    "plumbing-software", 
+    "electrical-contractor",
     "home-services",
-    "contractor",
-    "demo",
-    "website"
+    "customer-service-ai",
+    "voice-ai",
+    "automated-booking"
   ],
-  "author": "Trade Rabbit",
-  "license": "MIT"
+  "author": {
+    "name": "TradeRabbit Team",
+    "email": "team@traderabbit.com",
+    "url": "https://traderabbit.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/traderabbit/website.git"
+  },
+  "homepage": "https://traderabbit.com",
+  "bugs": {
+    "url": "https://github.com/traderabbit/website/issues",
+    "email": "support@traderabbit.com"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "vercel": "^32.0.0"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "seo": {
+    "title": "TradeRabbit - AI Assistant That Books Appointments 24/7",
+    "description": "While competitors lose customers to voicemail, TradeRabbit's AI assistant answers every call, books appointments, and collects payments automatically.",
+    "keywords": "contractor software, AI receptionist, appointment booking, HVAC software, plumbing management, home services AI",
+    "og:image": "assets/images/traderabbit-og-image.jpg",
+    "twitter:card": "summary_large_image"
+  },
+  "contact": {
+    "sales": "+1 (480) 532-1140",
+    "support": "support@traderabbit.com",
+    "demo": "+1 (480) 532-1140",
+    "address": "Phoenix, AZ"
+  },
+  "features": [
+    "24/7 AI Phone Assistant",
+    "Automated Appointment Booking", 
+    "Real-time Payment Collection",
+    "Customer History Integration",
+    "Emergency Call Handling",
+    "SMS Automation",
+    "Analytics Dashboard",
+    "Multi-location Support"
+  ],
+  "performance": {
+    "lighthouse": {
+      "performance": "> 90",
+      "accessibility": "> 95",
+      "best-practices": "> 90",
+      "seo": "> 95"
+    },
+    "core-web-vitals": {
+      "lcp": "< 2.5s",
+      "fid": "< 100ms", 
+      "cls": "< 0.1"
+    }
+  },
+  "security": {
+    "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com;",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()"
+  },
+  "analytics": {
+    "google-analytics": "G-XXXXXXXXXX",
+    "hotjar": "XXXXXXX",
+    "facebook-pixel": "XXXXXXXXXXXXXXXXX"
+  }
 }
-
