@@ -1,0 +1,21 @@
+{
+  "name": "trade-rabbit-website",
+  "version": "1.0.0",
+  "description": "Trade Rabbit - AI-powered platform for home services with integrated demo videos",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "build": "echo 'Static site - no build needed'",
+    "start": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "ai",
+    "home-services",
+    "contractor",
+    "demo",
+    "website"
+  ],
+  "author": "Trade Rabbit",
+  "license": "MIT"
+}
+

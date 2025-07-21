@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Rabbit - The AI-Powered Platform Revolutionizing Home Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .cta-btn {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: #2563eb;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .stat {
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        
+        /* Features */
+        .features {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+        
+        /* Video Demo Section */
+        .video-demo {
+            background: #1e40af;
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .video-demo h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .video-demo p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .video-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .video-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .video-card p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: #000;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Full Demo Section */
+        .full-demo {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .full-demo h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .full-demo p {
+            text-align: center;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .demo-sequence {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        
+        .demo-step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        
+        .demo-step-video {
+            width: 100%;
+            height: 200px;
+            background: #000;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-step-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        
+        .testimonial-stat {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #10b981;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin: 1rem 0;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e40af;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #1e3a8a;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .signup-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .signup-form input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .signup-form select {
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .demo-sequence {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🐰 Trade Rabbit</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">AI Demo</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#waitlist">Join Waitlist</a></li>
+            </ul>
+            <a href="#waitlist" class="cta-btn">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>The #1 AI-powered platform revolutionizing home services</h1>
+            <p>Where homeowners meet verified professionals through intelligent technology. Our AI diagnostic system and automated agents are transforming how home services work.</p>
+            
+            <div class="hero-buttons">
+                <a href="#waitlist" class="btn-primary">Join the Revolution</a>
+                <a href="#demo" class="btn-secondary">See AI in Action</a>
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">125%</div>
+                    <div>Average ROI Increase</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10K+</div>
+                    <div>Homeowners Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div>Verified Professionals</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">95%</div>
+                    <div>Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Built for the future of home services</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI Diagnostic System</h3>
+                    <p>Don't just trust, ask our AI agent to help pinpoint the root symptom. Get accurate, data-backed pricing from our ecosystem of verified professionals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Agents for Business</h3>
+                    <p>Never miss a lead or call with our AI-powered agents. Increase your FTE count by leveraging intelligent AI across all business functions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Scale Without Hiring</h3>
+                    <p>Our AI agents allow smaller companies to scale and bigger companies to be more efficient without additional staff costs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Verified Professionals</h3>
+                    <p>All professionals are licensed, insured, and background-checked. Our ecosystem ensures quality and reliability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data-Backed Pricing</h3>
+                    <p>Get fair, transparent quotes based on real market data and professional expertise. No more guessing games.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Effortless Booking</h3>
+                    <p>Book services in minutes with our streamlined, AI-assisted booking process. Smart scheduling that works.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section id="demo" class="video-demo">
+        <div class="container">
+            <h2>See our AI in action</h2>
+            <p>Experience the power of AI-driven home services through real demonstrations of our diagnostic system and business automation.</p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <h3>🌡️ Broken AC Emergency</h3>
+                    <p>Watch a frustrated homeowner deal with a broken central air unit in 85°F heat, then use Trade Rabbit's AI to get same-day HVAC repair.</p>
+                    <div class="video-container">
+                        <video controls>
+                            <source src="problem_segment.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>🤖 AI Agents Run Your Business</h3>
+                    <p>See how AI agents work 24/7 to handle calls, schedule appointments, process payments, and dispatch technicians while the business owner sleeps.</p>
+                    <div class="video-container">
+                        <video controls>
+                            <source src="hook_segment.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Full AI Assistant Demo -->
+            <div class="full-demo">
+                <h3>Complete AI Assistant Demo</h3>
+                <p>Watch the complete demonstration of how our AI assistant transforms contractor businesses by handling customer calls professionally 24/7.</p>
+                
+                <div class="demo-sequence">
+                    <div class="demo-step">
+                        <h4>1. New Customer Call</h4>
+                        <div class="demo-step-video">
+                            <video controls>
+                                <source src="scenario1_segment.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p>AI handles new customer appointment booking with professional service and real-time scheduling.</p>
+                    </div>
+                    
+                    <div class="demo-step">
+                        <h4>2. Returning Customer</h4>
+                        <div class="demo-step-video">
+                            <video controls>
+                                <source src="scenario2_segment.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p>AI recognizes returning customers and provides personalized service based on service history.</p>
+                    </div>
+                    
+                    <div class="demo-step">
+                        <h4>3. Business Results</h4>
+                        <div class="demo-step-video">
+                            <video controls>
+                                <source src="results_segment.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p>See the impressive business results: 90% conversion rate, 24/7 availability, 95% customer satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#waitlist" class="btn-primary" style="font-size: 1.2rem; padding: 1.2rem 2.5rem;">Get Your AI Assistant Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Trusted by professionals. Loved by homeowners.</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stat">+65% Revenue Growth</div>
+                    <p class="testimonial-text">"Trade Rabbit's AI agents have completely transformed our business. We're handling 3x more leads without hiring additional staff."</p>
+                    <div class="testimonial-author">— Premier Plumbing Solutions</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stat">+40% Efficiency</div>
+                    <p class="testimonial-text">"The AI diagnostic system gives our customers confidence and helps us provide accurate quotes every time. Game changer."</p>
+                    <div class="testimonial-author">— Elite HVAC Services</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stat">92% Retention Rate</div>
+                    <p class="testimonial-text">"Never missing a lead again. The AI handles everything seamlessly while we focus on delivering great service."</p>
+                    <div class="testimonial-author">— ProTech Electrical</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="waitlist" class="cta-section">
+        <div class="container">
+            <h2>Join the AI revolution in home services</h2>
+            <p>Be among the first to experience the future of home services. Get early access to our AI-powered platform.</p>
+            
+            <form class="signup-form">
+                <div class="form-row">
+                    <select>
+                        <option>Homeowner</option>
+                        <option>Service Professional</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Zip Code" required>
+                </div>
+                <button type="submit" class="btn-primary">Join the Revolution</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with Manus - Create my website</p>
+        </div>
+    </footer>
+</body>
+</html>
+
